@@ -1,17 +1,7 @@
-## Notes
-## makeCacheMatrix - Change class eaxample from list to matrix, and we will do inverse instead of mean
-## cacheSolve - compute inverse of matrix.  
-## if already calculated AND matrix not changed, then retrieve inverse from cache
-## how do you know if the matrix has changed?
-## how to inverse - solve(x) if matrix is square and invertable
+## These functions will create a specal matrix that can 
+## cache it's inverse
 
-
-## assume the matrix is always invertable
-
-## Put comments here that give an overall description of what your
-## functions do
-
-## Write a short comment describing this function
+## Function that creates a speical "matrix" that can store/cache it's inverse
 
 makeCacheMatrix <- function(x = matrix()) {
     m <- NULL
@@ -22,13 +12,11 @@ makeCacheMatrix <- function(x = matrix()) {
     get <- function() x
     setinverse <- function(inverse) m <<- inverse
     getinverse <- function() m
-    ##I understand we want a list here, not a matrix, because the list
-    ##will hold the functions we are giving it.  It will store the matrix
     list(set = set, get = get, setinverse = setinverse, getinverse = getinverse)
 }
 
 
-## Write a short comment describing this function
+## Determine if the inverse has already been calculate, if so return it, if not calculate it
 
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
@@ -43,8 +31,3 @@ cacheSolve <- function(x, ...) {
     m
 }
 
-##test scenarios
-## test nonsquare
-
-##done
-##create, set matrix with new matrix, set inverse, change data and set inverse,
